@@ -25,7 +25,7 @@ You will also need a running MQTT server.
 1. Log into the monitoring device, and configure the second IP option to point to the server that this daemon is running on. (Daemon defaults to port 9999)
 2. Make sure that the MQTT settings are correct in the daemon.
 3. Start the daemon
-4. Add the following to your OpenHAB items
+4. Add the following to your OpenHAB items (Replace XXXXXXXXXX with the serial number of your inverter)
 ```
 // Environmentals
 Number Solis_Temp "Temperature [%.2f °C]" (Solis) { mqtt="<[mymosquitto:ginlong/XXXXXXXXXX/temp:state:default" }

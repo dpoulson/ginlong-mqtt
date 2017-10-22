@@ -1,3 +1,4 @@
 test
 rawlog
-.swp
+*.swp
+*.ini
