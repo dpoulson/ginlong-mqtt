@@ -1,0 +1,24 @@
+SolarMAN-1
+
+270 byte data packet:
+
+Position     Type     Modifier    Data
+70-101       Ascii                Serial Number
+102-104      Hex      /10         Temperature
+108-111      Hex      /10         DC1 Input Voltage
+112-115      Hex      /10         DC1 Input Current
+120-123      Hex      /10         AC Current 
+140-143      Hex      /10         AC Power (not 100% on this one)
+144-147      Hex      /10         AC Voltage
+148-151      Hex      /100        AC Frequency
+156-159      Hex      /100        kWh today
+164-167      Hex      /10         kWh total
+
+
+SolarMAN-Ethernet
+
+
+
+SolarMAN-Customer
+
+

@@ -43,16 +43,16 @@ while True:
                     print >>sys.stderr, 'MQTT Topic: ', mqtt_topic
 
                 ##### Vpv1
-                vpv1 = float(int(hexdata[104:108],16))/10
+                vpv1 = float(int(hexdata[108:112],16))/10
                 if __debug__:
                     print >>sys.stderr, 'vpv1: ', vpv1
                 msgs.append((mqtt_topic + "Vpv1", vpv1, 0, False))
 
                 ##### Vpv2
-                vpv2 = float(int(hexdata[108:112],16))/10
-                if __debug__:
-                    print >>sys.stderr, 'vpv2: ', vpv2
-                msgs.append((mqtt_topic + "Vpv2", vpv2, 0, False))
+                #vpv2 = float(int(hexdata[108:112],16))/10
+                #if __debug__:
+                #    print >>sys.stderr, 'vpv2: ', vpv2
+                #msgs.append((mqtt_topic + "Vpv2", vpv2, 0, False))
 
                 ##### Ipv1
                 ipv1 = float(int(hexdata[112:116],16))/10
@@ -61,10 +61,10 @@ while True:
                 msgs.append((mqtt_topic + "Ipv1", ipv1, 0, False))
 
                 ##### Ipv2
-                ipv2 = float(int(hexdata[116:120],16))/10
-                if __debug__:
-                    print >>sys.stderr, 'ipv2: ', ipv2
-                msgs.append((mqtt_topic + "Ipv2", ipv2, 0, False))
+                #ipv2 = float(int(hexdata[116:120],16))/10
+                #if __debug__:
+                #    print >>sys.stderr, 'ipv2: ', ipv2
+                #msgs.append((mqtt_topic + "Ipv2", ipv2, 0, False))
 
                 ##### Vac1
                 vac1 = float(int(hexdata[144:148],16))/10
