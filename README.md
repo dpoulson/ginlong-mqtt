@@ -28,19 +28,19 @@ You will also need a running MQTT server.
 4. Add the following to your OpenHAB items (Replace XXXXXXXXXX with the serial number of your inverter)
 ```
 // Environmentals
-Number Solis_Temp "Temperature [%.2f °C]" (Solis) { mqtt="<[mymosquitto:ginlong/XXXXXXXXXX/temp:state:default" }
+Number Solis_Temp "Temperature [%.2f °C]" (Solis) { mqtt="<[mymosquitto:ginlong/XXXXXXXXXX/Temp:state:default" }
 
 // DC
-Number Solis_DC1Volt "DC Volts [%.2f V]" (Solis) { mqtt="<[mymosquitto:ginlong/XXXXXXXXXX/temp:state:default" }
-Number Solis_DC1Amp "DC Current [%.2f A]" (Solis) { mqtt="<[mymosquitto:ginlong/XXXXXXXXXX/temp:state:default" }
+Number Solis_DC1Volt "DC Volts [%.2f V]" (Solis) { mqtt="<[mymosquitto:ginlong/XXXXXXXXXX/Vpv1:state:default" }
+Number Solis_DC1Amp "DC Current [%.2f A]" (Solis) { mqtt="<[mymosquitto:ginlong/XXXXXXXXXX/Ipv1:state:default" }
 
 // AC
-Number Solis_AC1Volt "AC Volts [%.2f V]" (Solis) { mqtt="<[mymosquitto:ginlong/XXXXXXXXXX/temp:state:default" }
-Number Solis_AC1Amp "AC Current [%.2f A]" (Solis) { mqtt="<[mymosquitto:ginlong/XXXXXXXXXX/temp:state:default" }
+Number Solis_AC1Volt "AC Volts [%.2f V]" (Solis) { mqtt="<[mymosquitto:ginlong/XXXXXXXXXX/Vac1:state:default" }
+Number Solis_AC1Amp "AC Current [%.2f A]" (Solis) { mqtt="<[mymosquitto:ginlong/XXXXXXXXXX/Iac1:state:default" }
 
 // Stats
-Number Solis_kWhToday "kWh today [%.2f kWh]" (Solis) { mqtt="<[mymosquitto:ginlong/XXXXXXXXXX/temp:state:default" }
-Number Solis_kWhTotal "kWh total [%.2f kWh]" (Solis) { mqtt="<[mymosquitto:ginlong/XXXXXXXXXX/temp:state:default" }
+Number Solis_kWhToday "kWh today [%.2f kWh]" (Solis) { mqtt="<[mymosquitto:ginlong/XXXXXXXXXX/kwhtoday:state:default" }
+Number Solis_kWhTotal "kWh total [%.2f kWh]" (Solis) { mqtt="<[mymosquitto:ginlong/XXXXXXXXXX/kwhtotal:state:default" }
 ```
 5. These items should now be accessible in your rules. If you have influxdb and grafana set up, you should also be able to start producing graphs
 
