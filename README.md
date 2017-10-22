@@ -1,4 +1,4 @@
-#Overview
+# Overview
  
 This is a daemon that will listen on a port for connections from a Ginlong Solar Inverter. Currently tested with a Solis 4G Mini Single Phase Inverter (Solis-mini-1500-4G)
 
@@ -10,12 +10,12 @@ the stats will gather. This software allows you to run your own gatherer on a se
 automation software. 
 
 You will need a system running python with the following modules:
-*paho.mqtt.publish
-*socket
-*binascii
-*time
-*sys
-*string
+* paho.mqtt.publish
+* socket
+* binascii
+* time
+* sys
+* string
 
 You will also need a running MQTT server.
 
