@@ -1,0 +1,40 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:		  ginlong-mqtt
+# Required-Start:	
+# Required-Stop:	 
+# Default-Start:	 2 3 4 5
+# Default-Stop:	  0 1 6
+# Short-Description: Ginlong MQTT listener
+# Description:	  Listens for connections from a ginlong solar inverter, and pipes the output to MQTT 
+### END INIT INFO
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin:/home/pi/ginlong-mqtt
+NAME=ginlong-listen.py
+DAEMON_PATH=/home/pi/ginlong-mqtt
+PIDFILE=/var/run/$NAME.pid
+
+case "$1" in
+  start)
+	echo -n "Starting ginlong-mqtt: "
+	start-stop-daemon --start  --pidfile $PIDFILE --make-pidfile  --background --no-close --chdir $DAEMON_PATH --exec $NAME > /dev/null 2>&1
+	echo "done."
+	;;
+  stop)
+	echo -n "Stopping ginlong-mqtt: "
+	start-stop-daemon --stop --quiet --pidfile $PIDFILE
+	rm $PIDFILE
+	echo "done."
+	;;
+  restart)
+	echo "Restarting ginlong-mqtt: "
+	sh $0 stop
+	sleep 10
+	sh $0 start
+	;;
+  *)
+	echo "Usage: /etc/init.d/z-way-server {start|stop|restart|save}"
+	exit 1
+	;;
+esac
+exit 0
